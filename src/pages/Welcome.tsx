@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Feather } from '@expo/vector-icons';
+import { Button } from '../components/Button';
 
 export function Welcome() {
     return (
@@ -16,13 +17,10 @@ export function Welcome() {
                     </Text>
                 </View>
 
-                <TouchableOpacity style={styles.button}>
-                    <Feather 
-                        name='log-in'
-                        size={25}
-                        color='white'
-                    />
-                </TouchableOpacity>
+                <View style={styles.buttons}>
+                    <Button iconName='log-in' title='Login' />
+                    <Button iconName='user-plus' title='Register' />
+                </View>
             </View>
         </View>
     )
@@ -52,11 +50,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
         color: 'black'
     },
-    button: {
-        backgroundColor: '#800AAA',
-        textAlign: 'center',
-        paddingHorizontal: 30,
-        paddingVertical: 10,
-        borderRadius: 10,
+    buttons: {
+        flexDirection: 'row',
+        justifyContent: 'space-around'
     }
 });
